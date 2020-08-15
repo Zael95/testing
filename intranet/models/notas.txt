@@ -1,0 +1,6 @@
+CONEXIONBD: SE PUEDE USAR PA TODO
+general.class: Se conencta con los procedures(4 basicas)
+view.class: genera vistas(tablas,etc) 
+es clase hija de genral.class.
+modules.classs: clase para los modulos de la intranet.
+view es padre de modules.class.

@@ -1,0 +1,2 @@
+[30-May-2018 15:38:02 UTC] PHP Warning:  require(SLASH_SUPcommon/lib/phpmailer/class.phpmailer.php): failed to open stream: No such file or directory in /home/hdc/public_html/desarrolloweb/avances/kuyay/module/frmcontactenos.php on line 3
+[30-May-2018 15:38:02 UTC] PHP Fatal error:  require(): Failed opening required 'SLASH_SUPcommon/lib/phpmailer/class.phpmailer.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hdc/public_html/desarrolloweb/avances/kuyay/module/frmcontactenos.php on line 3

@@ -1,0 +1,56 @@
+[22-Jun-2018 03:54:15 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Letraset", las cuales contenían pasajes de Lorem Ipsum, y más recientemente co' at line 1' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php:432
+Stack trace:
+#0 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php(432): PDOStatement->execute()
+#1 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/view.class.php(408): generalQuery->updateData()
+#2 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/modules.class.php(1615): View->editRegister(Array)
+#3 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/controller/noticia.controller.php(155): Noticia->editar(Array)
+#4 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/view/noticia-form.php(1): require_once('/home/hdc/publi...' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php on line 432
+[22-Jun-2018 04:00:34 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Letraset", las cuales contenían pasajes de Lorem Ipsum, y más recientemente co' at line 1' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php:432
+Stack trace:
+#0 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php(432): PDOStatement->execute()
+#1 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/view.class.php(408): generalQuery->updateData()
+#2 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/modules.class.php(1615): View->editRegister(Array)
+#3 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/controller/noticia.controller.php(155): Noticia->editar(Array)
+#4 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/view/noticia-form.php(1): require_once('/home/hdc/publi...' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php on line 432
+[22-Jun-2018 04:05:17 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Letraset", las cuales contenían pasajes de Lorem Ipsum, y más recientemente co' at line 1' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php:432
+Stack trace:
+#0 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php(432): PDOStatement->execute()
+#1 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/view.class.php(408): generalQuery->updateData()
+#2 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/modules.class.php(1615): View->editRegister(Array)
+#3 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/controller/noticia.controller.php(155): Noticia->editar(Array)
+#4 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/view/noticia-form.php(1): require_once('/home/hdc/publi...' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php on line 432
+[22-Jun-2018 04:06:52 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Letraset", las cuales contenían pasajes de Lorem Ipsum, y más recientemente co' at line 1' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php:432
+Stack trace:
+#0 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php(432): PDOStatement->execute()
+#1 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/view.class.php(408): generalQuery->updateData()
+#2 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/modules.class.php(1615): View->editRegister(Array)
+#3 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/controller/noticia.controller.php(155): Noticia->editar(Array)
+#4 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/view/noticia-form.php(1): require_once('/home/hdc/publi...' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php on line 432
+[22-Jun-2018 04:07:42 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Letraset", las cuales contenían pasajes de Lorem Ipsum, y más recientemente co' at line 1' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php:432
+Stack trace:
+#0 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php(432): PDOStatement->execute()
+#1 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/view.class.php(408): generalQuery->updateData()
+#2 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/modules.class.php(1615): View->editRegister(Array)
+#3 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/controller/noticia.controller.php(155): Noticia->editar(Array)
+#4 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/view/noticia-form.php(1): require_once('/home/hdc/publi...' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php on line 432
+[22-Jun-2018 04:21:47 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Letraset", las cuales contenían pasajes de Lorem Ipsum, y más recientemente co' at line 1' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php:432
+Stack trace:
+#0 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php(432): PDOStatement->execute()
+#1 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/view.class.php(408): generalQuery->updateData()
+#2 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/modules.class.php(1615): View->editRegister(Array)
+#3 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/controller/noticia.controller.php(155): Noticia->editar(Array)
+#4 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/view/noticia-form.php(1): require_once('/home/hdc/publi...' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php on line 432
+[22-Jun-2018 04:41:33 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Letraset", las cuales contenían pasajes de Lorem Ipsum, y más recientemente co' at line 1' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php:432
+Stack trace:
+#0 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php(432): PDOStatement->execute()
+#1 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/view.class.php(408): generalQuery->updateData()
+#2 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/modules.class.php(1615): View->editRegister(Array)
+#3 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/controller/noticia.controller.php(155): Noticia->editar(Array)
+#4 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/view/noticia-form.php(1): require_once('/home/hdc/publi...' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php on line 432
+[22-Jun-2018 04:58:45 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Letraset", las cuales contenían pasajes de Lorem Ipsum, y más recientemente co' at line 1' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php:432
+Stack trace:
+#0 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php(432): PDOStatement->execute()
+#1 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/view.class.php(408): generalQuery->updateData()
+#2 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/modules.class.php(1615): View->editRegister(Array)
+#3 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/controller/noticia.controller.php(155): Noticia->editar(Array)
+#4 /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/view/noticia-form.php(1): require_once('/home/hdc/publi...' in /home/hdc/public_html/desarrolloweb/avances/kuyayhdc/sis/models/general.class.php on line 432

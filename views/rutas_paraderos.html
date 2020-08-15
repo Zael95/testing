@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tu Transporte</title>
+
+  <link rel="stylesheet" href="../app/css/bootstrap.css"/>
+  <link rel="stylesheet" href="../app/css/map.css"/>
+
+  <script src="../app/js/jquery-3.2.1.min.js"></script>
+  <script src="../app/js/googleMapScript.js"></script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Buses de Transporte Público</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid googleMap">
+        <div class="row googleMap">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar" id="mainLine">
+                    <!-- <li><a href="#"></a></li> -->
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 googleMap">
+                <div id="map"></div>
+            </div>
+        </div>
+        
+    </div>
+    
+
+
+    <script>   
+
+        var map;
+
+        var busList = []; //Bus's array
+        var Bus = function (id, routeName) {
+            this.id = id;
+            this.routeName = routeName;
+        }
+
+        var busStopList = [];//BusStop's array
+        var BusStop = function (id, markerList, show) {
+            this.id = id;
+            this.markerList = markerList;
+            this.show = show;
+        }
+
+        var busRouteList = []; //BusRoute's array
+        var BusRoute = function (id, polyline,show) {
+            this.id = id;
+            this.polyline = polyline;
+            this.show = show;
+        }
+        
+        var temp = '<li><a href="#" id=@id>@RouteName</a></li>';
+
+        $(function () {
+            initMap();
+            
+            $.when(getBusStop(), getBusRoute()).done(function (busStopData, busRouteData) {
+
+               
+                $.each(busStopData[0], function (index, value) {
+                    var id = value.RouteUID;
+                    if (busList.length > 0) {
+                        var result = $.grep(busList, function (e) { return e.id == id; });
+                        if (result.length > 0) {
+                            return;
+                        }
+                    }
+                    
+                    var bus = new Bus(value.RouteUID, value.RouteName.Zh_tw);
+                    busList.push(bus);
+
+                  
+                    var markerList = [];   
+                    var label = 1;
+                    $.each(value.Stops, function (i, stop) {
+                        var marker = new google.maps.Marker({
+                            position: {
+                                lat: stop.StopPosition.PositionLat,
+                                lng: stop.StopPosition.PositionLon
+                            },
+                            label:label.toString(),
+                            map: map,
+                            title: stop.StopName.Zh_tw + '(' + value.RouteName.Zh_tw + ')'
+                        });
+                        markerList.push(marker);
+                        label++;
+                    });
+                    var busStop = new BusStop(id, markerList, false);
+                    busStopList.push(busStop); 
+                });
+
+                
+                $.each(busRouteData[0], function (index, value) {
+                    var id = value.RouteUID;
+
+                    if (busRouteList.length > 0) {
+                        var result = $.grep(busRouteList, function (e) { return e.id == id; });
+                        if (result.length > 0) {
+                            return;
+                        }
+                    }
+
+                    var wkt = value.Geometry.replace('LINESTRING(', '').replace(')', '');
+                    var wktList = wkt.split(',');
+                    var flightPlanCoordinates = [];
+                    var markerListDebug = [];
+                    
+                    $.each(wktList, function (i, e) {
+                        var lat = Number(e.split(' ')[1]); 
+                        var lng = Number(e.split(' ')[0]);
+                        flightPlanCoordinates.push({
+                            lat: lat,
+                            lng: lng
+                        });
+                    });
+                    var flightPath = new google.maps.Polyline({
+                        path: flightPlanCoordinates,
+                        geodesic: true,
+                        strokeColor: '#0000CD',
+                        strokeOpacity: 0.6,
+                        strokeWeight: 5
+                    });
+                    var busRoute = new BusRoute(id, flightPath, false);
+
+                    busRouteList.push(busRoute);
+                });
+
+            
+                $.each(busList, function (index, value) {
+                    $('#mainLine').append(
+                        temp.replace('@RouteName', value.routeName).replace('@id',value.id)
+                    );
+                });
+                $('#mainLine a').click(getDetail);
+
+                showMap();
+            });
+        });
+
+        function getDetail(event) {
+            var target = event.target;
+            var id = target.id;
+
+            var parent = $('#' + id).parent();
+            var querybusStop = $.grep(busStopList, function (e) { return e.id == id });
+            var querybusRoute = $.grep(busRouteList, function (e) { return e.id == id });
+
+            if (querybusStop.length > 0 && querybusRoute.length > 0) {
+                if (parent.hasClass('active')) {
+                    parent.removeClass('active');
+                    querybusStop[0].show = false;
+                    querybusRoute[0].show = false;
+                }
+                else {
+                    parent.addClass('active');
+                    querybusStop[0].show = true;
+                    querybusRoute[0].show = true;
+                }
+            }
+            else {
+                alert('No data!!');
+                console.log(id);
+            }
+
+            showMap();
+        }
+    
+    </script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBWTqbyGQEG91zL0IeVEuPi3ZTGvji0TE8"></script> -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB2X2KXFh2e_yeUwyRgkqAh0UgbMTZcJUE"></script>
+</body>
+</html>

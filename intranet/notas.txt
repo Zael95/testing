@@ -1,0 +1,3 @@
+post: contiene los datos de todos los post (pase de datos).
+funtions: funciones generales
+cambiar fondo: view/img/
